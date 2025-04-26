@@ -1,0 +1,38 @@
+# Database Management Guide for Postgres-DB-SQL Project
+# Author: Denis Ureke
+# Last Updated: April 2025
+
+---
+
+Example storage path:
+C:\Users\ureke\Azure-Key\IMS-WM_key.pem
+
+---
+
+## 1. Log in to the Azure VM
+
+Open your terminal and connect to your Azure VM:
+
+```bash
+ssh -i "C:\Users\ureke\Azure-Key\IMS-WM_key.pem" azureuser@51.120.8.56
+
+2. Navigate to the database project folder
+
+cd ~/Postgres-DB-SQL
+
+3. Start the Postgres Database
+
+sudo docker-compose up -d
+sudo docker ps
+
+4. Connect to the Postgres Database
+
+sudo docker exec -it postgres-db-sql_postgres_1 psql -U postgres -d sql-db
+
+5. Basic Commands inside the Database (psql)
+
+Action	Command
+List all tables	\dt
+Show all databases	\l
+Describe a table	\d table_name
+Exit psql	\q
